@@ -57,7 +57,7 @@ public class GenerateCopyConstructorHandler extends GenerateMembersHandlerBase {
 		String parameterName = "other";
 
 		StringBuilder code = new StringBuilder();
-		code.append(String.format("public %s(%s %s) {", psiClass.getName(), psiClass.getName(), parameterName));
+		code.append(String.format("public void set(%s %s) {", psiClass.getName(), parameterName));
 
 		boolean superclassHasCopyConstructor = ConstructorUtil.hasCopyConstructor(psiClass.getSuperClass());
 		if (superclassHasCopyConstructor) {
